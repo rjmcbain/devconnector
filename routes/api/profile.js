@@ -38,7 +38,7 @@ router.get(
 );
 
 // @route           POST api/profile
-// @description     Create user profile
+// @description     Create or Edit user profile
 // @access          Private
 
 router.post(
@@ -62,8 +62,13 @@ router.post(
       profileFields.skills = req.body.skills.split(",");
     }
 
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
+    // Social
+    profileFields.social = {};
+    if (req.body.youtube) profileFields.social.youtube = req.body.youtube;
+    if (req.body.twitter) profileFields.social.twitter = req.body.twitter;
+    if (req.body.facebook) profileFields.social.facebook = req.body.facebook;
+    if (req.body.linkedin) profileFields.social.linkedin = req.body.linkedin;
+    if (req.body.instagram) profileFields.social.instagram = req.body.instagram;
   }
 );
 
