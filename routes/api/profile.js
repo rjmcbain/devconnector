@@ -29,6 +29,7 @@ router.get(
   (req, res) => {
     const errors = {};
     Profile.findOne({ user: req.user.id })
+      .populate("user", ["name", "avatar"])
       .then(profile => {
         if (!profile) {
           errors.noprofile = "There is no profile for this user";
@@ -39,6 +40,10 @@ router.get(
       .catch(err => res.status(404).json(err));
   }
 );
+
+// @route           GET api/profile/handle/:handle
+// @description     GET profile by handle
+// @access          Public
 
 // @route           POST api/profile
 // @description     Create or Edit user profile
