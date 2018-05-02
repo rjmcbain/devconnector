@@ -144,9 +144,15 @@ router.post(
               .json({ notliked: "You have not yet liked this post" });
           }
 
-          // Add user id to likes array
-          post.likes.unshift({ user: req.user.id });
+          // GET remove index
+          const removeIndex = post.likes
+            .map(item => item.user.toString())
+            .indexOf(req.user.id);
 
+          // Splice out of array
+          post.likes.splice(remove, 1);
+
+          // Save
           post.save().then(post => res.json(post));
         })
         .catch(err => res.status(404).json({ postnotfound: "Nopost found" }));
