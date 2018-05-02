@@ -71,15 +71,19 @@ router.post(
 // @route           DELETE api/posts/:id
 // @description     DELETE Posts
 // @access          Private
-router.delete('/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
-    Profile.findOne({ user: req.user.id })
-        .then(profile => {
-            Post.findById(req.params.id)
-                .then(post => {
-                    //Check for post owner
-                    if(post.user)
-                })
-        })
-})
+router.delete(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Profile.findOne({ user: req.user.id }).then(profile => {
+      Post.findById(req.params.id).then(post => {
+        //Check for post owner
+        if (post.user.toString() !== req.user.id) {
+          return res.status(401).json({ notauthorized: "User not authorized" });
+        }
+      });
+    });
+  }
+);
 
 module.exports = router;
