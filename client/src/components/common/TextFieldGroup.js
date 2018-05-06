@@ -1,6 +1,6 @@
 import React from "react";
-import classNames from "classnames";
-import propTypes from "prop-types";
+import classnames from "classnames";
+import PropTypes from "prop-types";
 
 const TextFieldGroup = ({
   name,
