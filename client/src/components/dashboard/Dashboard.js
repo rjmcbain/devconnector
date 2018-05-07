@@ -16,9 +16,10 @@ class Dashboard extends Component {
 
     // eslint-disable-next-line
     if (profile === null || loading) {
-      dashboardContent = <h4>Loading...</h4>;
+      dashboardContent = <Spinner />;
     } else {
-      dashboardContent = <h1>Hello</h1>;
+      // Check if logged in user has profile data
+      if(Object.keys(profile).length > 0)
     }
     return (
       <div className="dashboard">
