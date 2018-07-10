@@ -22,6 +22,7 @@ class AddExperience extends Component {
         }
     }
   render() {
+      const { errors } = this.state;
     return (
       <div>
         
@@ -30,4 +31,14 @@ class AddExperience extends Component {
   }
 }
 
-export default AddExperience;
+AddExperience.propTypes ={
+    profile: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+    profile: state.profile,
+    errors: state.errors
+})
+
+export default connect(mapStateToProps)(withRouter(AddExperience));
