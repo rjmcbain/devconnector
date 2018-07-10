@@ -87,6 +87,7 @@ class AddExperience extends Component {
                             error={errors.description}
                             info="Tell us about the position"
                         />
+                        <input type="submit" value="Submit" className="btn btn-info btn-block mt-4"/>
                     </form>
                 </div>
             </div>
