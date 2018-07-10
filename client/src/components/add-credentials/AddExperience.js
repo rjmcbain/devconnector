@@ -27,6 +27,12 @@ class AddExperience extends Component {
       this.onCheck = this.onCheck.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+      if(nextProps.errors) {
+        this.setState({ errors: nextProps.errors });
+      }
+    }
+
     onSubmit(e) {
       e.preventDefault();
       const expData = {
