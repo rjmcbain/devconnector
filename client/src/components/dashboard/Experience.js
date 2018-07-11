@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import Moment from 'react-moment';
 
 class Experience extends Component {
   render() {
@@ -24,6 +25,7 @@ class Experience extends Component {
                     <th>Years</th>
                     <th></th>
                 </tr>
+                    {experience}
             </thead>
         </table>
       </div>
