@@ -67,7 +67,7 @@ export const addEducation = (eduData, history) => dispatch => {
 };
 
 // Delete Experience
-export const deleteExperience = id => dispatch => {
+export const deleteExperience = (id, history) => dispatch => {
   axios
     .delete(`/api/profile/experience/${id}`)
     .then(res =>
