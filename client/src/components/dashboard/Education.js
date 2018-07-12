@@ -9,14 +9,14 @@ class Education extends Component {
         this.props.deleteEducation(id);
     }
   render() {
-      const education = this.props.education.map(exp => (
-          <tr key={exp._id}>
-            <td>{exp.company}</td>
-            <td>{exp.title}</td>
+      const education = this.props.education.map(edu => (
+          <tr key={edu._id}>
+            <td>{edu.school}</td>
+            <td>{edu.degree}</td>
             <td>
-                        <Moment format="YYYY/MM/DD">{exp.from}</Moment> -{exp.to === null ? (' Now') : (<Moment format="YYYY/MM/DD">{exp.to}</Moment>)}
+                        <Moment format="YYYY/MM/DD">{edu.from}</Moment> -{edu.to === null ? (' Now') : (<Moment format="YYYY/MM/DD">{edu.to}</Moment>)}
                     </td>
-            <td><button onClick= {this.onDeleteClick.bind(this, exp._id)} className="btn btn-danger">Delete</button></td>
+            <td><button onClick= {this.onDeleteClick.bind(this, edu._id)} className="btn btn-danger">Delete</button></td>
           </tr>
       ))
     return (
