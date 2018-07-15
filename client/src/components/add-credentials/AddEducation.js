@@ -34,6 +34,7 @@ class AddEducation extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+
     const eduData = {
       school: this.state.school,
       degree: this.state.degree,
