@@ -17,7 +17,7 @@ class Profiles extends Component {
       profileItems = <Spinner />;
     } else {
       if(profiles.length > 0) {
-        <h1>Profiles Here</h1>
+        profileItems = <h1>Profiles Here</h1>
       } else {
         profileItems = <h4>No Profiles Found...</h4>
       }
