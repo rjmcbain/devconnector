@@ -25,6 +25,7 @@ class Profile extends Component {
 }
 
 Profile.propTypes = {
+    getProfileByHandle: PropTypes.func.isRequired,
     profile: PropTypes.object.isRequired
 }
 
@@ -32,4 +33,4 @@ const mapStateToProps = state => ({
     profile: state.profile
 });
 
-export default connect(mapStateToProps)(Profile);
+export default connect(mapStateToProps, { getProfileByHandle })(Profile);
