@@ -6,7 +6,7 @@ class ProfileHeader extends Component {
       <div>
         <h1>PROFILE Header</h1>
       </div>
-    )
+    );
   }
 }
 
