@@ -13,6 +13,12 @@ class ProfileItem extends Component {
             <div className="col-2">
                 <img src={profile.user.avatar} alt="image" className="rounded-circle"/>
             </div>
+            <div className="col-lg-2 col-md-4 col-8">
+                <h3>{profile.user.name}</h3>
+                <p>
+                    {profile.status} {isEmpty(profile.company) ? null : (<span>at {profile.company}</span>)}
+                </p>
+            </div>    
         </div>
       </div>
     )
