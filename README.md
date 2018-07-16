@@ -1,5 +1,8 @@
 # DevConnector
 
+Go to [https://devconnectorreactapp.herokuapp.com/](https://devconnectorreactapp.herokuapp.com/) to view app.
+
+
 This is a social network with Node.js, Express, React, Redux & MongoDB, AKA the MERN Stack
 
 This app is designed to connect other devs.
